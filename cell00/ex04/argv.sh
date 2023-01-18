@@ -3,7 +3,8 @@ then
 	echo "No arguments supplied"
 	exit
 fi
-for counter in {1 2 3}
+count=0
+while [ ! $count -eq 3 ] 
 do
 	if [ -z $1 ]
 	then
@@ -12,4 +13,5 @@ do
 		echo $1
 	fi
 	shift
+	count=$(($count + 1))
 done

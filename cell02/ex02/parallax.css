@@ -1,0 +1,59 @@
+body, html {
+		height: 100%;
+		margin: 0;
+		font: 400 15px/1.8 "Lato", sans-serif;
+	}
+
+div{
+	color: white;
+	background-color: black;
+	text-align:center;
+	padding:50px 80px;
+	text-align: justify;	
+	}
+	
+a {
+	text-decoration: none;
+	color: white;
+	}
+
+p {
+	color: #fff;
+	padding: 5px;
+	font-size: 15px;
+	letter-spacing: 5px;
+	}
+
+.caption {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	color: white;
+	}
+
+.caption, .caption1 span.border {
+		color: #fff;
+		padding: 18px;
+		font-size: 25px;
+		letter-spacing: 10px;;
+		}
+
+.bimg1, .bimg2 {
+		position: relative;
+		background-attachment: fixed;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		}
+
+.bimg1 {
+	background-image: url("../../img/fractal-blu.jpg");
+	min-height: 700px;
+	}
+
+.bimg2 {
+	background-image: url("../../img/fractal-color.png");
+	min-height: 700px;
+	}

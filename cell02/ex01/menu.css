@@ -1,0 +1,68 @@
+a {
+  color: #fff;
+  text-decoration: none;
+  font-family: monospace;
+}
+
+.hamburger1 {
+  height: 45px;
+  margin: 10px;
+  display: grid;
+  justify-items: center;
+}
+
+.hamburger1 div {
+  background-color: black; 
+  width: 37px;
+  height: 5px;
+  margin-top: 7px;
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle1 {
+  display: none;
+}
+
+#toggle1:checked + .hamburger1 .top {
+  transform: rotate(-60deg);
+  margin-right: 17px;
+  margin-top: 22.5px;
+}
+
+#toggle1:checked + .hamburger1 .meat {
+  transform: rotate(60deg);
+  margin-left: 17px;
+  margin-top: -6px;
+}
+
+#toggle1:checked ~ .menu1 {
+  height: 200px;
+}
+
+.menu1 {
+  background-color: black;
+  display: grid;
+  width: auto;
+  height: 0px;
+  overflow: hidden;
+  transition: height .4s ease;
+}
+
+.menu1 a:first-child {
+  margin-top: 10px;
+}
+
+.menu1 a:last-child {
+  margin-bottom: 10px;
+}
+
+.link1 {
+  width: 100%;
+  text-align: center;
+}
+
+.link1:hover {
+  background-color: white;
+  color: black;
+}
+
