@@ -37,7 +37,8 @@ p {
 		color: #fff;
 		padding: 18px;
 		font-size: 25px;
-		letter-spacing: 10px;;
+		letter-spacing: 10px;
+		box-sizing: border-box;
 		}
 
 .bimg1, .bimg2 {
