@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- cap ggiannit -->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+		<title> Calculator </title>
+		<script>
+			function calcuMath()
+			{
+					var z;
+					var x = parseInt(document.getElementById("fn").value, 10);
+					var y = parseInt(document.getElementById("sn").value, 10);
+					var sel = document.getElementById("sign");
+					var selection = sel.options[sel.selectedIndex].value;
+					var more = document.getElementById("+");
+					var rest = document.getElementById("-");
+					var multi = document.getElementById("*");
+					var divi = document.getElementById("/");
+					var modul = document.getElementById("%");
+					if (selection == "+") 
+					{
+						z = parseFloat(x) + parseFloat(y);
+					}
+					if (selection == "-") 
+					{
+						z = parseFloat(x) - parseFloat(y);
+					}
+					if (selection == "*") 
+					{
+						z = parseFloat(x) * parseFloat(y);
+					}
+					if (selection == "/") 
+					{
+						z = parseFloat(x) / parseFloat(y);
+					}
+					if (selection == "%") 
+					{
+						z = parseFloat(x) % parseFloat(y);
+					}
+
+					function valideKey(evt) 
+					{
+						var code = (evt.which) ? evt.which : evt.keyCode;
+						if (code == 45)
+						{
+							return false;
+						}
+						else if ((code >= 48 && code <= 57) && (code == 8)) 
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+
+				if (x >= 0 && y >= 0) 
+				{
+					if (y == 0 && (selection == "%" || selection == "/"))
+					{
+						alert("It’s over 9000!");
+						return false;
+					}
+					document.getElementById("result").innerHTML = "The result is " + z + ".";
+					alert(document.getElementById("result").innerHTML);
+					console.log(z);
+				}
+				else
+				{
+					alert("Error :(");
+				}
+			}
+			
+			setInterval(function(){alert("Please, use her")}, 30000);
+
+		</script>
+		<style>
+			body {
+				justify-content: center;
+				background-color: #f1f1f1;
+			}
+
+			select {
+				margin-bottom: 10px;
+				margin-top: 15px;
+				}
+
+			input {
+				float: left;
+				margin-top: 15px;
+				height: 13px;
+				width: 100px;
+				margin-left: 20px;
+				margin-right: 20px;
+
+			}
+
+			form {
+				float: left;
+				}
+
+			button {
+				float: left;
+				height: 19px;
+				margin-top: 15px;
+				text-align: center;
+				}
+
+			p {
+				float: left;
+				height: 19px;
+				margin-top: 15px;
+				text-align: center;
+				margin-left: 25px;
+				}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="text" id="fn" pattern="[0-9]+">
+
+			<form action="#">
+				<select id="sign">
+					<option	value="">sign</option>
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<!--    cap ggiannit     -->
+					<option value="*">*</option>
+					<option value="/">/</option>
+					<option value="%">%</option>
+				</select>
+			</form>
+			<input type="text" id="sn" pattern="[0-9]+">
+
+			<button onclick="calcuMath()">Try me!</button>
+	<p id="result" align="center"></p>
+
+		</div>
+		</body>
+</html>
+<!-- cap ggiannit -->

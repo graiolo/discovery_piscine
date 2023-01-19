@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+		<title> RG Ball </title>
+		<script>
+			function ft_change_color(change)
+			{
+    			if(change.classList.contains("green"))
+    			{
+        			change.classList.remove("green");
+					change.classList.add("blue");
+    			}
+				else if(change.classList.contains("blue"))
+				{
+        			change.classList.remove("blue");
+					change.classList.add("red");
+    			}
+				else 
+				{
+					change.classList.remove("red");
+					change.classList.add("green");
+				}
+			}
+			
+			function ft_change_color_reverse(change)
+			{
+    			if(change.classList.contains("green"))
+    			{
+        			change.classList.remove("green");
+					change.classList.add("red");
+    			}
+				else if(change.classList.contains("blue"))
+				{
+        			change.classList.remove("blue");
+					change.classList.add("green");
+    			}
+				else 
+				{
+					change.classList.remove("red");
+					change.classList.add("blue");
+				}
+			}
+
+			function ft_click(change)
+			{
+				ft_change_color(change);
+				if (change.style.width < "420px")
+				{
+					change.style.width = (change.offsetWidth + 5) + "px";
+					change.style.height = (change.offsetHeight + 5) + "px";
+				}
+				else
+				{
+					change.style.width = (200) + "px";
+					change.style.height = (200) + "px";	
+				}
+
+			}
+
+			function ft_exit(change)
+			{
+				ft_change_color_reverse(change);
+				if (change.style.width > "200px")
+				{
+					change.style.width = (change.offsetWidth - 2.5) + "px";
+					change.style.height = (change.offsetHeight - 2.5) + "px"			
+				}
+			}
+		</script>
+		<style>
+			.ballon { 
+					width: 200px;
+					height: 200px;
+					margin: 0 auto 10px; 
+					border-radius:50%;
+					color: black; 
+				}
+				
+			.red {
+				background-color: red;
+				}
+
+			.green {
+				background-color: green;
+				}
+
+			.blue {
+				background-color: blue;
+				}
+
+		</style>
+	</head>
+	<body>
+		<div id="ballon" class="ballon red" onclick="ft_click(this)" onmouseleave="ft_exit(this)"></div>
+	</body>
+</html>
